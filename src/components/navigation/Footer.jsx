@@ -1,0 +1,72 @@
+import { Link } from 'react-router-dom';
+import { Send, MessageCircle } from 'lucide-react';
+import { ROUTES, TELEGRAM, BRAND_NAME } from '@utils/constants';
+
+export default function Footer() {
+  return (
+    <footer className="bg-gagarin-card border-t border-gagarin-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2.5 mb-4">
+              <img src="/logo.png" alt={BRAND_NAME} className="h-9 w-9 rounded-lg object-cover" />
+              <span className="text-lg font-bold text-white">
+                Gagarin <span className="text-gradient">VPN</span>
+              </span>
+            </div>
+            <p className="text-gray-400 text-sm">
+              Стабильный интернет там, где он нужен: V2Ray VLESS Reality, надёжные сервера, защита данных.
+            </p>
+          </div>
+
+          {/* Navigation */}
+          <div>
+            <h3 className="text-white font-semibold mb-4">Навигация</h3>
+            <ul className="space-y-2">
+              <li><Link to={ROUTES.PRICING} className="text-gray-400 hover:text-white text-sm transition-colors">Тарифы</Link></li>
+              <li><Link to={ROUTES.SETUP} className="text-gray-400 hover:text-white text-sm transition-colors">Подключение</Link></li>
+              <li><Link to={ROUTES.SUPPORT} className="text-gray-400 hover:text-white text-sm transition-colors">Поддержка</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-white font-semibold mb-4">Документы</h3>
+            <ul className="space-y-2">
+              <li><Link to={ROUTES.PRIVACY_POLICY} className="text-gray-400 hover:text-white text-sm transition-colors">Политика конфиденциальности</Link></li>
+              <li><Link to={ROUTES.TERMS} className="text-gray-400 hover:text-white text-sm transition-colors">Пользовательское соглашение</Link></li>
+            </ul>
+          </div>
+
+          {/* Socials */}
+          <div>
+            <h3 className="text-white font-semibold mb-4">Связаться</h3>
+            <div className="flex gap-3">
+              <a
+                href={TELEGRAM.BOT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-white/5 border border-gagarin-border flex items-center justify-center text-gray-400 hover:text-gagarin-neon hover:border-gagarin-neon transition-colors"
+              >
+                <Send className="w-5 h-5" />
+              </a>
+              <a
+                href={TELEGRAM.SUPPORT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-white/5 border border-gagarin-border flex items-center justify-center text-gray-400 hover:text-gagarin-neon hover:border-gagarin-neon transition-colors"
+              >
+                <MessageCircle className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 pt-6 border-t border-gagarin-border text-center text-gray-500 text-sm">
+          &copy; {new Date().getFullYear()} {BRAND_NAME}. Все права защищены.
+        </div>
+      </div>
+    </footer>
+  );
+}

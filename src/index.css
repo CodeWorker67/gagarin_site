@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-gagarin-dark text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply surface-metallic font-semibold px-6 py-3 rounded-btn transition-all duration-300 transform hover:scale-105 hover:shadow-neon-hover;
+  }
+  .surface-metallic {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 28%, #60a5fa 52%, #38bdf8 72%, #1d4ed8 100%);
+    color: #ffffff;
+    box-shadow:
+      0 0 0 1px rgba(96, 165, 250, 0.35) inset,
+      0 4px 24px rgba(29, 78, 216, 0.45);
+  }
+  .surface-metallic:hover {
+    filter: brightness(1.08);
+  }
+  .surface-metallic-muted {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #2563eb 75%, #1e40af 100%);
+    color: #e0f2fe;
+    box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.2) inset;
+  }
+  .btn-secondary {
+    @apply border-2 border-gagarin-neon text-gagarin-neon hover:bg-gagarin-neon/10 font-semibold px-6 py-3 rounded-btn transition-all duration-300;
+  }
+  .btn-ghost {
+    @apply text-gray-300 hover:text-white hover:bg-white/10 font-medium px-4 py-2 rounded-lg transition-all duration-200;
+  }
+  .card-dark {
+    @apply bg-gagarin-card rounded-card border border-gagarin-border p-6 shadow-card transition-all duration-300 hover:border-gagarin-neon/30 hover:shadow-neon;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 bg-gagarin-card border border-gagarin-border rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gagarin-neon/40 focus:border-transparent transition-all duration-300;
+  }
+  .glass-card {
+    @apply bg-blue-950/20 backdrop-blur-md border border-gagarin-border rounded-card;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(180deg, #93c5fd 0%, #38bdf8 35%, #2563eb 70%, #1e40af 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: titleShimmer 6s ease-in-out infinite;
+  }
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-sky-300 to-blue-400 bg-clip-text text-transparent;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .bg-radial-glow {
+    background: radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 60%);
+  }
+  .bg-page {
+    background: #050814;
+    position: relative;
+  }
+  .bg-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(125deg, #050814 0%, #0c1428 25%, #0f1a35 50%, #0c1428 75%, #050814 100%);
+    background-size: 320% 320%;
+    animation: bgShimmer 22s ease-in-out infinite;
+  }
+  .bg-page::after {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 45% at 30% 40%, rgba(37, 99, 235, 0.12), transparent 58%),
+      radial-gradient(ellipse 50% 40% at 75% 65%, rgba(56, 189, 248, 0.08), transparent 55%),
+      radial-gradient(ellipse 40% 35% at 50% 90%, rgba(30, 111, 255, 0.06), transparent 50%);
+    animation: bgGlowDrift 28s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes bgShimmer {
+  0%, 100% { background-position: 0% 40%; }
+  35% { background-position: 100% 55%; }
+  65% { background-position: 85% 20%; }
+}
+
+@keyframes bgGlowDrift {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.85; }
+  100% { transform: translate(6%, -5%) scale(1.08); opacity: 1; }
+}
+
+@keyframes titleShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
