@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Youtube, MessageSquare, Gamepad2, Send } from 'lucide-react';
 
 const useCases = [
-  { icon: Youtube, title: 'YouTube без рекламы', desc: 'Смотри видео без ограничений скорости и без блокировок' },
+  { icon: Youtube, title: 'YouTube без рекламы', desc: 'Смотри видео без ограничений скорости' },
   { icon: MessageSquare, title: 'Discord', desc: 'Голосовые и видеочаты без лагов и отключений' },
   { icon: Gamepad2, title: 'Игры', desc: 'Низкий пинг на европейских серверах. Стабильное соединение' },
   { icon: Send, title: 'Telegram', desc: 'Полный доступ без замедлений и сбоев' },
