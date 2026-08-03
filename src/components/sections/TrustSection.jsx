@@ -18,9 +18,6 @@ export default function TrustSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Разблокируй <span className="text-gradient">всё</span>
-          </h2>
           <p className="text-gray-400">
             YouTube, Discord, Telegram, игры — всё работает быстро и стабильно.
           </p>
