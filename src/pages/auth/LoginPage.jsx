@@ -7,6 +7,7 @@ import { Shield, Mail, ArrowLeft } from 'lucide-react';
 import useAuthStore from '@stores/authStore';
 import { authApi } from '@services/api';
 import { ROUTES, GOOGLE_CLIENT_ID, BRAND_NAME, TELEGRAM } from '@utils/constants';
+import { capturePartnerFromUrl } from '@utils/partner';
 import Button from '@components/ui/Button';
 import toast from 'react-hot-toast';
 
@@ -14,6 +15,10 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuthStore();
   // const [authMethod, setAuthMethod] = useState('telegram');
+
+  useEffect(() => {
+    capturePartnerFromUrl();
+  }, []);
 
   useEffect(() => {
     if (isAuthenticated) navigate(ROUTES.DASHBOARD);
