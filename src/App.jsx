@@ -26,6 +26,7 @@ const SuccessPage = lazy(() => import('@pages/checkout/SuccessPage'));
 const PrivacyPolicyPage = lazy(() => import('@pages/public/PrivacyPolicyPage'));
 const TermsPage = lazy(() => import('@pages/public/TermsPage'));
 const GiftPage = lazy(() => import('@pages/gift/GiftPage'));
+const TrafficBuyPage = lazy(() => import('@pages/public/TrafficBuyPage'));
 
 const PageLoader = () => <div className="min-h-screen" />;
 
@@ -62,6 +63,7 @@ function AppShell() {
               element={<TelegramLoginCallbackPage />}
             />
             <Route path={ROUTES.LOGIN_BOT} element={<BotLoginPage />} />
+            <Route path={ROUTES.TRAFFIC_BUY} element={<TrafficBuyPage />} />
             <Route path={ROUTES.CHECKOUT} element={<CheckoutPage />} />
             <Route path={ROUTES.SUCCESS} element={<SuccessPage />} />
             <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicyPage />} />

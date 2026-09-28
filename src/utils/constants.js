@@ -12,6 +12,7 @@ export const ROUTES = {
   PRIVACY_POLICY: '/privacy',
   TERMS: '/terms',
   GIFT: '/gift',
+  TRAFFIC_BUY: '/traffic_buy',
 };
 
 export const BRAND_NAME = 'Gagarin VPN';
@@ -87,6 +88,16 @@ export function getTariffsByDevices(devices) {
 export const PAYMENT_METHODS = [
   { id: 'sbp', label: 'СБП', icon: 'Zap' },
   { id: 'card', label: 'Карта РФ', icon: 'CreditCard' },
+];
+
+/** Пакеты доп. трафика (GB → ₽), от большего к меньшему — как в боте */
+export const TRAFFIC_PACKAGES = [
+  { gb: '500', price: 1249 },
+  { gb: '250', price: 629 },
+  { gb: '100', price: 259 },
+  { gb: '50', price: 149 },
+  { gb: '20', price: 79 },
+  { gb: '10', price: 50 },
 ];
 
 export const FEATURES = [
